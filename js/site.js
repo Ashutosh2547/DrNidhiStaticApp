@@ -1,4 +1,26 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+$(document).ready(function () {
+  // Attach event listener to the button
 
-// Write your JavaScript code.
+  $("#openIframeBtn").on("click", function () {
+    // URL to be loaded in the iframe
+    alert("hello");
+
+    var iframeUrl = "https://subdomain.drnidhibhatt.in";
+
+    // Check if iframe is already present, otherwise create and append
+
+    if ($("#iframeContainer iframe").length === 0) {
+      var iframe = $("<iframe>", {
+        src: iframeUrl,
+
+        width: "600px",
+
+        height: "400px",
+
+        frameborder: "0",
+      });
+
+      $("#iframeContainer").append(iframe);
+    }
+  });
+});
