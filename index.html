@@ -1,306 +1,1084 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Dr Nidhi Bhatt (Best Homeopathy Clinic)</title>
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Nidhi Bhatt - Homeopathic Doctor | Natural Healing & Wellness</title>
+    <meta name="description" content="Experience holistic homeopathic treatment with Dr. Nidhi Bhatt. Over 8 years of expertise in natural healing addressing root causes, not just symptoms.">
+    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
     
-        <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-        <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-        <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            950: '#0a302e',
+                        },
+                        accent: {
+                            gold: '#d4a574',
+                            cream: '#f7fafa',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a302e 0%, #134e4a 25%, #0f766e 50%, #134e4a 75%, #115e59 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 118, 110, 0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #14b8a6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Swiper Custom Styles */
+        .services-swiper {
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+        
+        .services-swiper .swiper-wrapper {
+            align-items: stretch;
+            transition-timing-function: ease-out;
+        }
+        
+        .services-swiper .swiper-slide {
+            height: auto;
+        }
+        
+        .services-swiper .swiper-pagination {
+            position: relative;
+            bottom: 0;
+            margin-top: 20px;
+        }
+        
+        .services-swiper .swiper-pagination-bullet {
+            background: #0f766e;
+            opacity: 0.3;
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+        }
+        
+        .services-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+        
+        /* Testimonials Swiper Styles */
+        .testimonials-swiper {
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+        
+        .testimonials-swiper .swiper-wrapper {
+            align-items: stretch;
+            transition-timing-function: ease-out;
+        }
+        
+        .testimonials-swiper .swiper-slide {
+            height: auto;
+        }
+        
+        .testimonials-swiper .swiper-pagination {
+            position: relative;
+            bottom: 0;
+            margin-top: 20px;
+        }
+        
+        .testimonials-swiper .swiper-pagination-bullet {
+            background: #0f766e;
+            opacity: 0.3;
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+        }
+        
+        .testimonials-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+        
+        /* Hero Swiper Custom Styles */
+        .hero-swiper .swiper-pagination {
+            bottom: 30px !important;
+        }
+        
+        .hero-swiper .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.4);
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+            margin: 0 5px !important;
+        }
+        
+        .hero-swiper .swiper-pagination-bullet-active {
+            background: #ffffff;
+            width: 28px;
+            border-radius: 5px;
+        }
+        
+        /* Hide hero background image on mobile */
+        @media (max-width: 1023px) {
+            .hero-bg-carousel {
+                display: none !important;
+            }
+        }
+        
+        /* Fix navbar background on mobile/tablet */
+        @media (max-width: 1023px) {
+            #navbar {
+                background: rgba(19, 78, 74, 0.98);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
 </head>
-
-<body>
-    <div id="topbar" class="d-flex align-items-center fixed-top">
-        <div class="container d-flex justify-content-between">
-            <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope"></i> <a href="mailto:nidhibhatt2012@gmail.com>">nidhibhatt2012@gmail.com</a>
-                <i class="bi bi-phone"></i> <a href="tel:+91-9999656266">+91 9999656266</a>
-            </div>
-            <div class="d-none d-lg-flex social-links align-items-center">
-                <a href="https://www.instagram.com/dr.nidhibhatt/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a target="_blank" href="https://in.linkedin.com/in/dr-nidhi-bhatt-b67861175" class="linkedin"><i class="bi bi-linkedin"></i></a>
+<body class="font-sans antialiased">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="w-full px-6 sm:px-10 md:px-16 lg:px-20">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-2 flex-shrink min-w-0">
+                    <div class="flex-shrink-0">
+                        <img src="assets/img/favicon.png" alt="Dr. Nidhi Bhatt Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover">
+                    </div>
+                    <div class="flex flex-col items-start min-w-0">
+                        <span class="text-base sm:text-lg font-serif font-semibold text-white leading-tight whitespace-nowrap">Dr. Nidhi Bhatt</span>
+                        <p class="text-[7px] sm:text-[8px] text-white/80 font-medium tracking-widest uppercase leading-tight mt-0.5 whitespace-nowrap overflow-hidden text-ellipsis">
+                            Classical Homeopathy • Natural Remedies
+                        </p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-4 xl:space-x-6 text-sm xl:text-base">
+                    <a href="#home" class="nav-link text-white/90 hover:text-white transition-colors whitespace-nowrap">Home</a>
+                    <a href="#about" class="nav-link text-white/90 hover:text-white transition-colors whitespace-nowrap">About</a>
+                    <a href="#services" class="nav-link text-white/90 hover:text-white transition-colors whitespace-nowrap">Services</a>
+                    <a href="#testimonials" class="nav-link text-white/90 hover:text-white transition-colors whitespace-nowrap">Testimonials</a>
+                    <a href="#gallery" class="nav-link text-white/90 hover:text-white transition-colors whitespace-nowrap">Gallery</a>
+                    <a href="#contact" class="nav-link text-white/90 hover:text-white transition-colors whitespace-nowrap">Contact</a>
+                    <a href="#appointment" class="bg-white text-primary-800 px-4 xl:px-6 py-2 xl:py-2.5 rounded-full font-medium hover:bg-primary-100 transition-all hover:shadow-lg whitespace-nowrap ml-2 text-sm xl:text-base">
+                        Book Appointment
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white p-2 flex-shrink-0 border-2 border-white/50 rounded-md hover:border-white hover:bg-white/10 transition-all" id="mobile-menu-btn" aria-label="Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
         </div>
-    </div>
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
-
-            <h1 class="logo me-auto"><img src="assets/img/favicon.png" style="max-height:90px"/> <a href="index.html">Dr. Nidhi Bhatt</a></h1>
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden bg-primary-900 w-full border-t border-white/20" id="mobile-menu">
+            <div class="px-6 sm:px-10 py-6 space-y-4">
+                <a href="#home" class="block text-white/90 hover:text-white py-2">Home</a>
+                <a href="#about" class="block text-white/90 hover:text-white py-2">About</a>
+                <a href="#services" class="block text-white/90 hover:text-white py-2">Services</a>
+                <a href="#testimonials" class="block text-white/90 hover:text-white py-2">Testimonials</a>
+                <a href="#gallery" class="block text-white/90 hover:text-white py-2">Gallery</a>
+                <a href="#contact" class="block text-white/90 hover:text-white py-2">Contact</a>
+                <a href="#appointment" class="block bg-white text-primary-800 px-6 py-3 rounded-full font-medium text-center mt-4">
+                    Book Appointment
+                </a>
+            </div>
         </div>
-    </header>
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container">
-            <h1>Welcome to Home of Homeopathy</h1>
-            <h2>We are here to cure for sure</h2>
-            <a href="#appointment" class="btn-get-started scrollto">Book an Appointment</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative overflow-hidden hero-gradient">
+        <!-- Full-width background image carousel (hidden on mobile) -->
+        <div class="absolute inset-0 hero-bg-carousel hidden lg:block">
+            <div class="swiper hero-swiper h-full w-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/img/gallery/gallery-1.jpg" 
+                             alt="Dr. Nidhi Bhatt Clinic" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/img/gallery/gallery-2.jpg" 
+                             alt="Homeopathic Consultation" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/img/gallery/gallery-3.jpg" 
+                             alt="Natural Healing Treatment" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/img/gallery/gallery-4.jpg" 
+                             alt="Homeopathic Medicine Care" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="swiper-pagination !bottom-8 !z-30"></div>
+            </div>
+        </div>
+        
+        <!-- Smooth gradient overlay - merges teal into image -->
+        <div class="absolute inset-0 z-10" style="background: linear-gradient(to right, 
+            rgba(15,118,110,1) 0%, 
+            rgba(15,118,110,1) 30%, 
+            rgba(15,118,110,0.85) 45%, 
+            rgba(15,118,110,0.6) 55%, 
+            rgba(15,118,110,0.3) 65%, 
+            rgba(15,118,110,0.1) 75%,
+            transparent 90%);"></div>
+        
+        <!-- Content overlay -->
+        <div class="relative z-20 min-h-screen flex items-center pt-20">
+            <div class="px-6 sm:px-10 md:px-16 lg:px-20 py-24 lg:py-0 w-full lg:w-[60%]">
+                <div class="text-white max-w-xl" data-aos="fade-right">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] mb-6">
+                        Welcome to<br>
+                        <span class="text-primary-300 italic">Home of Homeopathy</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-white/80 mb-10 leading-relaxed">
+                        We are here to cure for sure. Holistic and individualistic treatment has been our forte since inception. 
+                        Experience natural healing with Dr. Nidhi Bhatt's personalized homeopathic care that addresses root causes, not just symptoms.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-14">
+                        <a href="#contact" class="group bg-white/10 backdrop-blur-sm border border-white/30 text-white px-7 py-3.5 rounded-full font-medium hover:bg-white hover:text-primary-800 transition-all duration-300 flex items-center space-x-2">
+                            <span>Book an Appointment</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#about" class="bg-white text-primary-800 px-7 py-3.5 rounded-full font-medium hover:bg-primary-100 transition-all shadow-lg hover:shadow-xl">
+                            Learn More
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="flex flex-wrap gap-8 sm:gap-12">
+                        <div class="text-center">
+                            <p class="text-4xl sm:text-5xl font-serif font-bold text-white italic">1K<span class="text-primary-300">+</span></p>
+                            <p class="text-sm text-white/60 mt-1">Happy Patients</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-4xl sm:text-5xl font-serif font-bold text-white italic">8<span class="text-primary-300">+</span></p>
+                            <p class="text-sm text-white/60 mt-1">Certifications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/50 animate-bounce z-20">
+            <i data-lucide="chevron-down" class="w-7 h-7"></i>
         </div>
     </section>
 
-    <main id="main">
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-accent-cream relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="relative">
+                        <img src="assets/img/favicon.png" 
+                             alt="Dr. Nidhi Bhatt - Homeopathic Doctor" 
+                             class="rounded-3xl shadow-2xl w-full max-w-md mx-auto">
+                        
+                        <!-- Experience Badge -->
+                        <div class="absolute -bottom-6 -right-6 bg-primary-700 text-white p-6 rounded-2xl shadow-xl">
+                            <p class="text-4xl font-bold">8+</p>
+                            <p class="text-sm text-primary-200">Years of<br>Excellence</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content Side -->
+                <div data-aos="fade-left">
+                    <p class="text-primary-600 font-medium tracking-wider uppercase mb-4">About Dr. Nidhi Bhatt</p>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-6">
+                        Dedicated to Your <span class="text-primary-600">Natural Wellness</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Dr. Nidhi Bhatt is a distinguished homeopathic physician with over 8 years of experience in treating chronic and acute conditions 
+                        through the gentle art of homeopathy. Her approach combines classical homeopathic principles with modern diagnostic understanding.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Holistic and Individualistic treatment has been our forte since inception. We have been providing unmatched cure to a wide variety of illnesses.
+                        We ensure that long-lasting treatment is given and patients maintain a healthy lifestyle afterwards.
+                    </p>
+                    
+                    <!-- Qualifications -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="graduation-cap" class="w-5 h-5 text-primary-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">BHMS and MD</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="badge-check" class="w-5 h-5 text-primary-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Registered Practitioner</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="users" class="w-5 h-5 text-primary-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">1,000+ Patients</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="heart-pulse" class="w-5 h-5 text-primary-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Holistic Approach</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-flex items-center space-x-2 bg-primary-700 text-white px-8 py-4 rounded-full font-medium hover:bg-primary-800 transition-all shadow-lg hover:shadow-xl">
+                        <span>Book a Consultation</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="why-us" class="why-us">
-            <div class="container">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-primary-600 font-medium tracking-wider uppercase mb-4">Our Services</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+                    Comprehensive Homeopathic <span class="text-primary-600">Care</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We offer personalized treatment for a wide range of conditions, focusing on long-term healing rather than temporary relief.
+                </p>
+            </div>
+            
+            <!-- Services Swiper - Carousel on mobile, Grid on desktop -->
+            <div class="swiper services-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Service Card 1 - Chronic Diseases -->
+                    <div class="swiper-slide">
+                        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full" data-aos="fade-up" data-aos-delay="100">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop" 
+                                     alt="Chronic Disease Treatment" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Chronic Diseases</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Effective treatment for diabetes, hypertension, thyroid disorders, arthritis, and other long-term conditions.</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Diabetes Management</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Thyroid Disorders</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Arthritis Relief</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 2 - Respiratory Issues -->
+                    <div class="swiper-slide">
+                        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full" data-aos="fade-up" data-aos-delay="200">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" 
+                                     alt="Respiratory Issues" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Respiratory Issues</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Effective remedies for asthma, bronchitis, sinusitis, and recurring respiratory infections.</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Asthma Management</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Sinusitis Relief</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Allergy Treatment</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 3 - Skin Conditions -->
+                    <div class="swiper-slide">
+                        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full" data-aos="fade-up" data-aos-delay="300">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=300&fit=crop" 
+                                     alt="Skin Conditions" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Skin Conditions</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Natural treatment for eczema, psoriasis, acne, and other dermatological concerns.</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Eczema & Psoriasis</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Acne Treatment</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Hair Fall Solutions</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Service Card 4 - Women's Health -->
+                    <div class="swiper-slide">
+                        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full" data-aos="fade-up" data-aos-delay="400">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop" 
+                                     alt="Women's Health" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Women's Health</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Specialized care for hormonal imbalances, PCOS, menstrual issues, and menopausal symptoms.</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>PCOS Treatment</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Menstrual Disorders</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Fertility Support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 5 - Pediatric Care -->
+                    <div class="swiper-slide">
+                        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full" data-aos="fade-up" data-aos-delay="500">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=300&fit=crop" 
+                                     alt="Pediatric Care" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Pediatric Care</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Safe and gentle remedies for children's health issues, from recurring infections to behavioral concerns.</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Immunity Building</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Growth & Development</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Allergies & Asthma</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 6 - Mental Wellness -->
+                    <div class="swiper-slide">
+                        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full" data-aos="fade-up" data-aos-delay="600">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop" 
+                                     alt="Mental Wellness" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Mental Wellness</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Holistic approach to anxiety, depression, stress, and other emotional health challenges.</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Anxiety & Depression</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Sleep Disorders</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="check" class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"></i>
+                                        <span>Stress Management</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
 
-                <div class="row">
-                    <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="content">
-                            <h3>Why Us?</h3>
-                            <p>
-                                Holistic and Individualistic treatment has been our forte since inception. We have been providing unmatched cure to a wide variety of illnesses.
-                                We ensure that long-lasting treatment is given and patients maintain a healthy lifestyle afterwards. Our history of happy patients says it all.
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-accent-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-primary-600 font-medium tracking-wider uppercase mb-4">Testimonials</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+                    What Our <span class="text-primary-600">Patients Say</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Real experiences from patients who have found healing through homeopathy.
+                </p>
+            </div>
+            
+            <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                    <i data-lucide="user" class="w-6 h-6 text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Deepanshu</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic leading-relaxed">
+                                "Best homeopathic doctor my family has come across. I was dealing with severe acne from my early teen years but soon after the homeopathic medicine started which were provided by her, the acne intensively reduced with no new breakouts. All in all 5 stars for the best treatment I received."
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-8 d-flex align-items-stretch">
-                        <div class="icon-boxes d-flex flex-column justify-content-center">
-                            <div class="row">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <section id="counts" class="counts">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="count-box">
-                            <i class="fas fa-user-md"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter">0</span>
-                            <span>+</span>
-                            <p>Happy Patients</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="count-box">
-                            <i class="fas fa-award"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter">0</span>
-                            <p>Certifications</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper" id="swiper-wrapper-d613b5de1a2797a5" aria-live="off" style="transform: translate3d(-4606px, 0px, 0px); transition-duration: 0ms;">
-                        
-                        <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 638px; margin-right: 20px;">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-
-                                    <h3>Deepanshu</h3>
-
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>Best homeopathic doctor my family has come across. I was dealing with severe acne from my early teen years but soon after the homeopathic medicine started which were provided by her, the acne intensively reduced with no new breakouts.
-                                        All in all 5 stars for the best treatment I received
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                    <i data-lucide="user" class="w-6 h-6 text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Manoj Sharma</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
                                 </div>
                             </div>
+                            <p class="text-gray-600 italic leading-relaxed">
+                                "I suffered by asthma. I was wondering here and there since last two year in Delhi but no solution. One day I got to know about Dr. Nidhi Bhatt since then my course started for 5 months. After 2nd month I am doing best and seems no issue. I will be grateful for Dr. Nidhi Bhatt."
+                            </p>
                         </div>
-
-                        <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="width: 638px; margin-right: 20px;">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="" class="testimonial-img" alt="">
-                                    <h3>Manoj Sharma</h3>
-
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>Hi friend i am sharing my personal experience on homeopathy medicine. There are many doctors who will misguide in Delhi. Same happens to me also. I suffered by asthma.i was wondering here and there since last two year in delhi but no solution. one day i got to know about Homeopathy Dr. Nidhi Bhatt since then my course started for 5 months. after 2nd months  i am doing best and seems no issue. i will be greatful for Dr. Nidhi Bhatt<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                    <i data-lucide="user" class="w-6 h-6 text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Sonal Sachdeva</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
                                 </div>
                             </div>
+                            <p class="text-gray-600 italic leading-relaxed">
+                                "Dr. Nidhi is a very good doc. of homeopathy. Her behaviour with the patients is very nice & she is a very calm doc. by nature. She has a good experience & I wish her good luck & success in life."
+                            </p>
                         </div>
-
-                        
-
-
-                        <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 638px; margin-right: 20px;">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-
-                                    <h3>Sonal Sachdeva</h3>
-
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>Dr.Nidhi is a vry good  doc.of homoeopathy. Her behaviour with the patients is vry nce &amp; she is a vry calm doc.by nature.She has a good experience &amp; I wish her  good luck &amp; success in life.
-                                        1<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                    <i data-lucide="user" class="w-6 h-6 text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Prabhat Gupta</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
                                 </div>
                             </div>
+                            <p class="text-gray-600 italic leading-relaxed">
+                                "I have been dealing with chronic cold and I used to fall sick often. I have been feeling much relieved since I started consultation with Dr Nidhi. She is quite attentive and knows what she is doing. Would surely recommend her!!"
+                            </p>
                         </div>
-
-
-                        <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 638px; margin-right: 20px;">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-
-                                    <h3>Prabhat Gupta</h3>
-
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>I have been dealing with chronic cold and I used to fall sick often. I have been feeling much relieved since I started consultation with Dr Nidhi. She is quite attentive and knows what she is doing. She was able to pin point my problem quite accurately and her suggestions are suiting me well.  Would surely recommend her !!
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        
-                        <!-- End testimonial item -->
-                    </div>
-                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
-                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                </div>
-
-            </div>
-        </section><!-- End Testimonials Section -->
-        <!-- ======= Gallery Section ======= -->
-        <section id="gallery" class="gallery">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Gallery</h2>
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row no-gutters">
-
-                    <div class="col-lg-3 col-md-4">
-                        <div class="gallery-item">
-                            <a href="assets/img/gallery/gallery-1.jpg" class="galelry-lightbox">
-                                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4">
-                        <div class="gallery-item">
-                            <a href="assets/img/gallery/gallery-2.jpg" class="galelry-lightbox">
-                                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4">
-                        <div class="gallery-item">
-                            <a href="assets/img/gallery/gallery-3.jpg" class="galelry-lightbox">
-                                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4">
-                        <div class="gallery-item">
-                            <a href="assets/img/gallery/gallery-4.jpg" class="galelry-lightbox">
-                                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Contact</h2>
-                    <p>Glad to know that you want to contact us. We are working in both online and offline  </p>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6" style="
-    border-right: 1px solid;
-">
-                        <div class="row">
-                            <div style="
-    min-height: 150px;
-">
-                                <h3>South Delhi</h3>
-                                <p>
-                                    A 13, Tower 1,East Kidwai Nagar New Delhi, Delhi 110023<br><br>
-                                </p>
-                            </div>
-                        </div>
-                        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7007.936828175378!2d77.20974217543642!3d28.570711179768807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f812727101%3A0x84c5777b85aeec12!2sDr%20Nidhi%20Bhatt%20%7C%20Homeopath%20%7C%20BHMS%2C%20DU!5e0!3m2!1sen!2sin!4v1672048026540!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="col-sm-6" style="
-    border-right: 1px solid;
-">
-                        <div class="row">
-                            <div style="
-    min-height: 150px;
-">
-                                <h3>South West Delhi</h3>
-                                <p>
-                                    42B, Street No. 7, Sangam Vihar, Dharampura, Najafgarh, New Delhi, Delhi 110043<br><br>
-                                </p>
-                            </div>
-                        </div>
-
-                        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224172.6297258317!2d76.95729859835566!3d28.608855211597735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0f40fdaef6b5%3A0xfa35debc68569943!2sDr%20Nidhi%20Bhatt%20%7C%20Homeopath!5e0!3m2!1sen!2sin!4v1672047617518!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-primary-600 font-medium tracking-wider uppercase mb-4">Gallery</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+                    Our <span class="text-primary-600">Clinic</span>
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="assets/img/gallery/gallery-1.jpg" alt="Gallery 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="assets/img/gallery/gallery-2.jpg" alt="Gallery 2" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="assets/img/gallery/gallery-3.jpg" alt="Gallery 3" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="assets/img/gallery/gallery-4.jpg" alt="Gallery 4" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </main>
-    <footer id="footer">
-
+    <!-- Appointment Booking Section -->
+    <section id="appointment" class="py-20 hero-gradient relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        </div>
         
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-primary-200 font-medium tracking-wider uppercase mb-4">Book Appointment</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+                    Schedule Your <span class="text-primary-300">Consultation</span>
+                </h2>
+                <p class="text-white/80 max-w-2xl mx-auto">
+                    Take the first step towards natural healing. Book your appointment today and start your journey to wellness.
+                </p>
+            </div>
+            
+            <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700">Full Name *</label>
+                        <input type="text" placeholder="Enter your name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 outline-none transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700">Phone Number *</label>
+                        <input type="tel" placeholder="+91 XXXXX XXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 outline-none transition-all">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" placeholder="your.email@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 outline-none transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700">Preferred Date</label>
+                        <input type="date" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 outline-none transition-all">
+                    </div>
+                </div>
+                
+                <div class="space-y-2 mb-8">
+                    <label class="text-sm font-medium text-gray-700">Clinic Location *</label>
+                    <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 outline-none transition-all">
+                        <option value="">Select clinic location</option>
+                        <option value="south-delhi">South Delhi - East Kidwai Nagar</option>
+                        <option value="south-west-delhi">South West Delhi - Sangam Vihar</option>
+                    </select>
+                </div>
+                
+                <div class="space-y-2 mb-8">
+                    <label class="text-sm font-medium text-gray-700">Message (Optional)</label>
+                    <textarea placeholder="Describe your health concern or any specific requirements..." rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none"></textarea>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <button class="w-full sm:w-auto bg-primary-700 text-white px-8 py-4 rounded-full font-medium hover:bg-primary-800 transition-all shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                        <span>Book Appointment</span>
+                        <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                    </button>
+                    <div class="flex items-center space-x-2 text-sm text-gray-600">
+                        <i data-lucide="phone" class="w-4 h-4 text-primary-600"></i>
+                        <span>Or call us at <a href="tel:+919999656266" class="text-primary-600 font-medium hover:text-primary-700">+91 9999656266</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-primary-600 font-medium tracking-wider uppercase mb-4">Contact Us</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
+                    Get in <span class="text-primary-600">Touch</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Glad to know that you want to contact us. We are working in both online and offline modes.
+                </p>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center p-6 bg-accent-cream rounded-2xl">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Email</h3>
+                    <a href="mailto:nidhibhatt2012@gmail.com" class="text-primary-600 hover:text-primary-700">nidhibhatt2012@gmail.com</a>
+                </div>
+                <div class="text-center p-6 bg-accent-cream rounded-2xl">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="phone" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Phone</h3>
+                    <a href="tel:+919999656266" class="text-primary-600 hover:text-primary-700">+91 9999656266</a>
+                </div>
+                <div class="text-center p-6 bg-accent-cream rounded-2xl">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Social Media</h3>
+                    <a href="https://www.instagram.com/dr.nidhibhatt/" target="_blank" class="text-primary-600 hover:text-primary-700">@dr.nidhibhatt</a>
+                </div>
+            </div>
+            
+            <!-- Clinic Locations -->
+            <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="200">
+                <!-- South Delhi -->
+                <div class="bg-accent-cream rounded-2xl overflow-hidden shadow-lg">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif font-bold text-gray-800 mb-4 flex items-center">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-primary-600 mr-2"></i>
+                            South Delhi
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            A 13, Tower 1, East Kidwai Nagar<br>
+                            New Delhi, Delhi 110023
+                        </p>
+                    </div>
+                    <iframe 
+                        class="w-full h-80"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7007.936828175378!2d77.20974217543642!3d28.570711179768807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f812727101%3A0x84c5777b85aeec12!2sDr%20Nidhi%20Bhatt%20%7C%20Homeopath%20%7C%20BHMS%2C%20DU!5e0!3m2!1sen!2sin!4v1672048026540!5m2!1sen!2sin"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <!-- South West Delhi -->
+                <div class="bg-accent-cream rounded-2xl overflow-hidden shadow-lg">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif font-bold text-gray-800 mb-4 flex items-center">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-primary-600 mr-2"></i>
+                            South West Delhi
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            42B, Street No. 7, Sangam Vihar<br>
+                            Dharampura, Najafgarh<br>
+                            New Delhi, Delhi 110043
+                        </p>
+                    </div>
+                    <iframe 
+                        class="w-full h-80"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224172.6297258317!2d76.95729859835566!3d28.608855211597735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0f40fdaef6b5%3A0xfa35debc68569943!2sDr%20Nidhi%20Bhatt%20%7C%20Homeopath!5e0!3m2!1sen!2sin!4v1672047617518!5m2!1sen!2sin"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">Dr. Nidhi Bhatt</h3>
+                    <p class="text-white/70 text-sm">
+                        Dedicated to providing holistic and individualistic homeopathic treatment for lasting wellness.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/dr.nidhibhatt/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://in.linkedin.com/in/dr-nidhi-bhatt-b67861175" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-sm text-white/60">
+                <p>&copy; 2026 Dr. Nidhi Bhatt. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="assets/vendor/purecounter/purecounter.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
-    
+    <!-- Back to Top Button -->
+    <a href="#home" class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary-700 transition-all hover:shadow-xl z-40" id="back-to-top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </a>
 
-    
-
-
-<!-- Visual Studio Browser Link -->
-<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="278fc49c7df54a77a9481329715d9b93" data-requestMappingFromServer="false" data-connectUrl="http://localhost:54179/30560b58aaf040dbb1f9fea6fea249f3/browserLink"></script>
-<!-- End Browser Link -->
-<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Navbar background on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(19, 78, 74, 0.98)';
+                navbar.style.backdropFilter = 'blur(12px)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'none';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // Initialize Hero Swiper
+        const heroSwiper = new Swiper('.hero-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.hero-swiper .swiper-pagination',
+                clickable: true,
+            },
+        });
+        
+        // Initialize Services Swiper
+        const servicesSwiper = new Swiper('.services-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.services-swiper .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+        
+        // Initialize Testimonials Swiper
+        const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.testimonials-swiper .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
